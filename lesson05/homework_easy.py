@@ -6,9 +6,8 @@
 import os
 import shutil
 
-if __name__ == '__main__':
 
-
+def main():
     for i in range(1, 10):
         try:
             os.mkdir('dir_{}'.format(i))
@@ -85,3 +84,5 @@ def change_directory():
     except FileNotFoundError:
         print('Такой папки не существует')
 
+if __name__ == "__main__":
+    main()
