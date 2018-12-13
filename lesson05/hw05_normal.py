@@ -28,22 +28,28 @@ def help():
     """)
 
 
-do = {
-    'help': help,  # Помощь
-    '1': homework_easy.change_directory,  # Перейти в папку
-    '2': homework_easy.list_of_directory,  # Просмотреть содержимое
-    '3': homework_easy.delete_folder,  # Удалить папку
-    '4': homework_easy.create_folder  # Создать папку
-}
+def main():
+    do = {
+        'help': help,  # Помощь
+        '1': homework_easy.change_directory,  # Перейти в папку
+        '2': homework_easy.list_of_directory,  # Просмотреть содержимое
+        '3': homework_easy.delete_folder,  # Удалить папку
+        '4': homework_easy.create_folder  # Создать папку
+    }
 
-try:
-    key = sys.argv[1]
-except IndexError:
-    key = None
+    try:
+        key = sys.argv[1]
+    except IndexError:
+        key = None
 
-if key:
-    if do.get(key):
-        do[key]()
-    else:
-        print('Неверный ключ, напишите "help" для получения справки')
+    if key:
+        if do.get(key):
+            do[key]()
+        else:
+            print('Неверный ключ, напишите "help" для получения справки')
 
+
+
+
+if __name__ == "__main__":
+    main()
